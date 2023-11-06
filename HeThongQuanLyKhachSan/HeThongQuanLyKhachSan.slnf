@@ -1,0 +1,8 @@
+{
+  "solution": {
+    "path": "..\\HeThongQuanLyKhachSan.sln",
+    "projects": [
+      "HeThongQuanLyKhachSan\\HeThongQuanLyKhachSan.csproj"
+    ]
+  }
+}
