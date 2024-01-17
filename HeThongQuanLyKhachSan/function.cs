@@ -11,10 +11,11 @@ namespace HeThongQuanLyKhachSan
 {
     internal class function
     {
+        public SqlCommandBuilder capnhat;
         protected SqlConnection getConnection() 
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = "Data Source = DALAC;Initial Catalog = HeThongQuanLyKhachSan;Integrated Security = True";
+            con.ConnectionString = "Data Source = DALAC;Initial Catalog = QLKS4;Integrated Security = True";
             return con;
         }
         public DataSet getData(string query) 
@@ -50,6 +51,12 @@ namespace HeThongQuanLyKhachSan
             cmd = new SqlCommand(query, con);
             SqlDataReader sdr = cmd.ExecuteReader();
             return sdr;
+        }
+
+        public void CapNhatDuLieu(SqlDataAdapter bdg, DataTable dt)
+        {
+            capnhat = new SqlCommandBuilder(bdg);
+            bdg.Update(dt);
         }
     }
 }
